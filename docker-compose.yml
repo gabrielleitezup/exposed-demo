@@ -1,0 +1,21 @@
+version: '3'
+services:
+  postgres:
+    image: postgres:9.4
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=exposed
+      - POSTGRES_USER=user_db
+      - POSTGRES_PASSWORD=user_db
+      - MAX_CONNECTIONS=300
+    networks:
+      - compose_exposed
+    volumes:
+      - ./data/init.sql:/docker-entrypoint-initdb.d/init.sql
+
+networks:
+  compose_exposed:
+    driver: bridge
+    ipam:
+      driver: default
