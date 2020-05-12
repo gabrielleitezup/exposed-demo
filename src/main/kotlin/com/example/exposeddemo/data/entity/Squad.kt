@@ -9,7 +9,7 @@ data class Squad(
     val status: String
 )
 
-object SquadTable : LongIdTable() {
+object SquadTable : LongIdTable("squad") {
     val name = text("name")
     val status = text("status")
     val createAt = datetime("create_at")
