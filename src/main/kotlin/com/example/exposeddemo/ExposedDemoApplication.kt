@@ -1,6 +1,6 @@
 package com.example.exposeddemo
 
-import com.example.exposeddemo.repository.UserTable
+import com.example.exposeddemo.data.entity.UserTable
 import org.jetbrains.exposed.sql.Database
 import org.jetbrains.exposed.sql.SchemaUtils
 import org.jetbrains.exposed.sql.transactions.transaction
