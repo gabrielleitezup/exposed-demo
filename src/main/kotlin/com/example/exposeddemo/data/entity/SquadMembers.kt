@@ -2,18 +2,31 @@ package com.example.exposeddemo.data.entity
 
 import org.jetbrains.exposed.dao.id.LongIdTable
 import org.jetbrains.exposed.sql.jodatime.datetime
-import java.math.BigInteger
+import org.joda.time.LocalDateTime
 import java.sql.Timestamp
+import java.util.Date
+import java.util.UUID
 
 data class SquadMembers(
     val id: Long,
-    val squad: BigInteger,
-    val customerDetail: String,
+    val squad: Long,
+    val customerDetail: UUID,
     val isLeader:Boolean,
     val isTech:Boolean,
     val status: String,
-    val createAt: Timestamp,
-    val inactivateAt: Timestamp?
+    val createAt: Date,
+    val inactivateAt: Date?
+)
+
+data class SquadMembersWithCustomer(
+    val id: Long,
+    val squad: Long,
+    val customerDetail: CustomerDetail,
+    val isLeader:Boolean,
+    val isTech:Boolean,
+    val status: String,
+    val createAt: Date,
+    val inactivateAt: Date?
 )
 
 object SquadMembersTable : LongIdTable("squad_members") {
