@@ -13,7 +13,7 @@ data class SquadMembers(
     val isTech:Boolean,
     val status: String,
     val createAt: Timestamp,
-    val inactivateAt: Timestamp
+    val inactivateAt: Timestamp?
 )
 
 object SquadMembersTable : LongIdTable("squad_members") {
